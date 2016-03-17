@@ -20,7 +20,7 @@
                 var elemets = document.getElementById('list');
                 var task = document.getElementById('task');
                 var el = document.createElement("li");
-                if(task!=''){
+                if(task.value!=''){
                     el.innerHTML = '<p>' +  task.value + '</p>' + '<button class="delete" onclick="del()">Видалити</button>';
                     elemets.appendChild(el);
                     task.value='';
