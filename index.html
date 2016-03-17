@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title> Практична по JS №2</title>
+    </head>
+    <body>
+        <h1>Список задач</h1>
+        <div class="list" id="list">
+            
+            <li>
+                <p>Задача</p>
+                <button class="delete" onclick="del()">Видалити</button>
+            </li>
+        </div>
+        <input type="text" id="task" placeholder="Введіть назву задачі"  />
+        <button class="add" onclick="add()">Додати</button>
+        <script>
+            function add() {
+                var elemets = document.getElementById('list');
+                var task = document.getElementById('task');
+                var el = document.createElement("li");
+                if(task!=''){
+                    el.innerHTML = '<p>' +  task.value + '</p>' + '<button class="delete" onclick="del()">Видалити</button>';
+                    elemets.appendChild(el);
+                    task.value='';
+                }
+            }
+            function del() {
+                var button = event.target;
+                button.parentElement.remove();
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+.list {
+    
+}
+li {
+}
+button.delete {
+    margin-left: 300px;
+    margin-top: -33px;
+    width: 80px;
+}
+button.add {
+    margin-left: 123;
+    width: 80px;
+}
