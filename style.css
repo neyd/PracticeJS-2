@@ -1,14 +1,59 @@
+body {
+    background-color:  717D94;
+}
 .list {
-    
+    color: beige;
+    font-weight: 600;
+    font-size: 20px;
 }
 li {
+    font-family: monospace;
 }
 button.delete {
     margin-left: 300px;
     margin-top: -33px;
-    width: 80px;
+    width: 120px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: B1353E;
+    color: white;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+.delete:hover{
+    background-color:  8F1821;
 }
 button.add {
     margin-left: 123;
     width: 80px;
+    background-color: 87A2D8;
+    border-radius:10px;
+    width: 120px;
+    height: 25px;
+    color: white
+}
+.add:hover{
+    background-color: 3C61AA;
+}
+.delAll{
+    width: 150px;
+    background-color: 87A2D8;
+    border-radius:10px;
+    width: 250px;
+    height: 25px;
+    color: white;
+    background-color: 87A2D8;
+}
+.delAll:hover{
+    background-color: 3C61AA;
+}
+input{
+    border-radius: 10px;
+    width: 250px;
+}
+input:hover{
+    border: 2px solid ;
+}
+h1{
+    color: beige;
 }

@@ -11,7 +11,9 @@
         </div>
         <input type="text" id="task" placeholder="Введіть назву задачі"  />
         <button class="add" onclick="add()">Додати</button>
+        <button class="delAll" onclick="delAllTask()">Видалити всі задачі</button>
         <script>
+            /*Додавання задачі*/
             function add() {
                 var elemets = document.getElementById('list');
                 var task = document.getElementById('task');
@@ -22,30 +24,33 @@
                     task.value='';
                 }
             }
+            /*Видалення задачі*/
             function del() {
                 var button = event.target;
                 button.parentElement.remove();
             }
+            /*Завантаження з LocalStorage*/
             function localST(){
                 var elemets = document.getElementById('list');
                 if(typeof(localStorage) !== "undefined") {
                 elemets.innerHTML = elemets.innerHTML + localStorage.getItem("myList");
                 }
             }
+            /*Запис при виході*/
             function onUnl(){
                 var elemets = document.getElementById('list');
                 localStorage.removeItem("myList");
                 localStorage.setItem("myList", elemets.innerHTML);
             }
-        /*    
-        Видалення всіх елементів LocalStorage
-         for (var i = 0; i < localStorage.length; i++) { 
-                key = localStorage.key(i);
-                localStorage.removeItem(key);
+            /*Видалення всіх задач*/
+            function delAllTask(){
+             for (var i = 0; i < localStorage.length; i++) { 
+                    key = localStorage.key(i);
+                    localStorage.removeItem(key);
                 }
-        */
-        
-
+                var elemets = document.getElementById('list');
+                elemets.innerHTML='';
+            }
         </script>
     </body>
 </html>
