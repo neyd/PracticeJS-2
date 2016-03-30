@@ -4,14 +4,10 @@
         <link rel="stylesheet" href="style.css">
         <title> Практична по JS №2</title>
     </head>
-    <body>
+    <body onload="localST()" onunload="onUnl()">
         <h1>Список задач</h1>
         <div class="list" id="list">
             
-            <li>
-                <p>Задача</p>
-                <button class="delete" onclick="del()">Видалити</button>
-            </li>
         </div>
         <input type="text" id="task" placeholder="Введіть назву задачі"  />
         <button class="add" onclick="add()">Додати</button>
@@ -21,7 +17,7 @@
                 var task = document.getElementById('task');
                 var el = document.createElement("li");
                 if(task.value!=''){
-                    el.innerHTML = '<p>' +  task.value + '</p>' + '<button class="delete" onclick="del()">Видалити</button>';
+                    el.innerHTML = '<p>' + task.value + '</p>' + '<button class="delete" onclick="del()">Видалити</button>';
                     elemets.appendChild(el);
                     task.value='';
                 }
@@ -30,6 +26,26 @@
                 var button = event.target;
                 button.parentElement.remove();
             }
+            function localST(){
+                var elemets = document.getElementById('list');
+                if(typeof(localStorage) !== "undefined") {
+                elemets.innerHTML = elemets.innerHTML + localStorage.getItem("myList");
+                }
+            }
+            function onUnl(){
+                var elemets = document.getElementById('list');
+                localStorage.removeItem("myList");
+                localStorage.setItem("myList", elemets.innerHTML);
+            }
+        /*    
+        Видалення всіх елементів LocalStorage
+         for (var i = 0; i < localStorage.length; i++) { 
+                key = localStorage.key(i);
+                localStorage.removeItem(key);
+                }
+        */
+        
+
         </script>
     </body>
 </html>
